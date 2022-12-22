@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <div class="logo-container">
+            <img src="./src/cartera-logo.png" alt="" class="cartera-logo">
+        </div>
+        <div class="receipt-outer">
+            <div class="receipt-container torn">
+                <div class="receipt-content">
+                    <h1 class="success-message">ADD MONEY<br>SUCCESSFUL</h1>
+                    <span class="success-logo">
+                        <canvas id="canvas" width="250" height="250"></canvas>
+                    </span>
+                    <div class="transaction-info">
+                        <div class="amount">
+                            <span class="amount-label">Amount</span>
+                            <span class="amount-val">PHP 1,000.00</span>    
+                        </div>
+                        <div class="refNo-date">
+                            <div class="refNo">
+                                <span class="refNo-label">Ref. No: </span>
+                                <span class="refNo-val">1234567890-14</span>
+                            </div>
+                            <span class="date">June 08 2022 - 2:30 pm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="close-button">
+            <button class="close">Close</button>
+        </div>
+        <footer class="footer">
+            POWERED BY 
+            <img src="./src/cartera-logo.png" alt="" class="footer-logo">
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/@rive-app/canvas@1.0.79"></script>
+    <script>
+        layout = new rive.Layout({
+            fit: rive.Fit.FitWidth,
+            alignment: rive.Alignment.TopCenter,
+        });
+        const r = new rive.Rive({
+            src:'./src/check.riv',
+            canvas:document.getElementById('canvas'),
+            layout:layout,
+            autoplay:true,
+        })
+    </script>
+</body>
+</html>
