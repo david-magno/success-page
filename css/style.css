@@ -31,7 +31,7 @@ body{
 
 .receipt-container{
     background-color: white;
-    background: url(./../src/wave.png);
+    background: url(./../src/wave-jetti.png);
     background-position: top;
     background-size: contain;
     background-repeat: no-repeat;
@@ -121,7 +121,7 @@ body{
 }
 .close{
     border: none;
-    background-color: #2887BC;
+    background-color: #F27421;
     color: #fff;
     font-size: 1rem;
     font-weight: 600;
