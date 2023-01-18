@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/success-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -23,12 +23,12 @@
                     <div class="transaction-info">
                         <div class="amount">
                             <span class="amount-label">Amount</span>
-                            <span class="amount-val">PHP 1,000.00</span>    
+                            <span class="amount-val">PHP<span class="amountVal" th:text=${amount}>1000.00</span></span>    
                         </div>
                         <div class="refNo-date">
                             <div class="refNo">
                                 <span class="refNo-label">Ref. No: </span>
-                                <span class="refNo-val">1234567890-14</span>
+                                <span class="refNo-val" th:text="${trxId}">1234567890-14</span>
                             </div>
                             <span class="date">June 08 2022 - 2:30 pm</span>
                         </div>
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div class="close-button">
-            <button class="close">Close</button>
+            <button class="close" id="close">Close</button>
         </div>
         <footer class="footer">
             POWERED BY 
@@ -56,6 +56,10 @@
             canvas:document.getElementById('canvas'),
             layout:layout,
             autoplay:true,
+        })
+        const closeButton = document.getElementById("close");
+        closeButton.addEventListener('click',e=>{
+            window.close();
         })
     </script>
 </body>
